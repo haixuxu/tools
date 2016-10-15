@@ -7,13 +7,15 @@ Getopt::Long::GetOptions(
     'exec=s'  => \$exec,
 );
 if ( defined($wants_help) ) {
-    print "usage:\r\n \tproxy-nohup commandline!\n";
+    print "usage:\r\n \tproxy-nohup -e/--exec commandline!\n";
 }
 elsif ( defined($version) ) {
     print "0.0.1\n";
 }
 elsif ( defined($exec) ) {
     start($exec);
+}else{
+    print "usage:\r\n \tproxy-nohup -e/--exec commandline!\n";
 }
 
 sub start {
