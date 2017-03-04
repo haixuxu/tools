@@ -1,7 +1,7 @@
 use_spacer right
 use_xft yes
-font Microsoft YaHei:size=8
-xftfont Microsoft YaHei:size=8
+font Sans:size=8
+xftfont Sans:size=8
 override_utf8_locale yes
 update_interval 3.0
 
@@ -29,16 +29,16 @@ cpu_avg_samples 2
 uppercase no # set to yes if you want all text to be in uppercase
 
 TEXT
-${font Microsoft YaHei:style=Bold:pixelsize=22}${alignc}${time %H:%M:%S}
-${font Microsoft YaHei:pixelsize=16}${alignc}${time %b%d日星期%a}${alignc}
+${font Sans:style=Bold:pixelsize=22}${alignc}${time %H:%M:%S}
+${font Sans:pixelsize=16}${alignc}${time %b%d日星期%a}${alignc}
 ${color #ffa200}${hr 2}
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ffcf}主机名:${color #00ffcf} $alignr$nodename
 ${color #00ffcf}内核: ${color #00ffcf}$alignr$kernel
 ${color #00ffcf}已运行时间: ${color #00ffcf}$alignr$uptime
 ${color #ffd700}${stippled_hr 1}
 # CPU
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ff1e}CPU: $alignr ${execpi 8 sensors | grep 'Core 0' | cut --characters 16-21} ${execpi 8 sensors | grep 'Core 1' | cut --characters 16-21}${execpi 8 sensors | grep 'Core 2' | cut --characters 16-21} ${execpi 8 sensors | grep 'Core 3' | cut --characters 16-21}
 ${color white}CPU占用:$alignr CPU%
 Core 1: ${freq_g 1}GHz (${cpu cpu1}%) ${alignr 100}${cpubar cpu1}
@@ -54,7 +54,7 @@ ${color lightgrey} ${top name 3}$alignr${top cpu 6}
 ${color lightgrey} ${top name 3}$alignr${top cpu 7}
 ${color #ffd700}${stippled_hr 1}$color
 # 
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ff1e}SAM: $mem  $alignr${color #db7093}$memperc%($memmax)
 ${color #78af78}${membar 8}
 ${color #00ff1e}SWAP: $swap $alignr ${color #db7093}$swapperc%($swapmax)
@@ -70,10 +70,10 @@ ${color lightgrey} ${top_mem name 3}$alignr ${top_mem mem 6}
 ${color lightgrey} ${top_mem name 3}$alignr ${top_mem mem 7}
 ${color #ffd700}${stippled_hr 1}$color
 # 显示磁盘的使用情况
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ff1e}硬盘读取速度:${alignr}${diskio_read}
 ${color #00ff1e}硬盘写入速度:${alignr}${diskio_write}
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ff1e}/ 分区: ${color}${alignr}${fs_used /}/ ${fs_size /}
 ${color #78af78}${fs_bar 8 /}
 ${color #00ff1e}/boot 分区: ${color}${alignr}${fs_used /boot}/ ${fs_size /boot}
@@ -85,14 +85,14 @@ ${execpi 8 hddtemp  | grep 'sda'}
 ${execpi 8 hddtemp  | grep 'sdb'}
 ${color #ffd700}${stippled_hr 1}$color
 # 显示网络使用情况
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #00ff1e}网络 1$alignr ${color #00ff1e}IP地址: ${color DDAA00}${addr enp5s0f1}
 ${voffset 1}${color #98c2c7} 上传: ${color #db7093}${upspeed enp5s0f1}/s ${alignr}${color #98c2c7}总共: ${color #db7093}${totalup enp5s0f1}
 ${voffset 1}${color #98c2c7} 下载: ${color #ddaa00}${downspeed enp5s0f1}/s ${alignr}${color #98c2c7}总共: ${color #ddaa00}${totaldown enp5s0f1}
 ${color #00ff1e}网络 2$alignr ${color #00ff1e}IP地址: ${color DDAA00}${addr wlp4s0}
 ${voffset 1}${color #98c2c7} 上传: ${color #db7093}${upspeed wlp4s0}/s ${alignr}${color #98c2c7}总共: ${color #db7093}${totalup wlp4s0}
 ${voffset 1}${color #98c2c7} 下载: ${color #ddaa00}${downspeed wlp4s0}/s ${alignr}${color #98c2c7}总共: ${color #ddaa00}${totaldown wlp4s0}
-${font Microsoft YaHei:pixelsize=12}
+${font Sans:pixelsize=12}
 ${color #ffa200}${hr 2}
 ${color white}
 无善无恶心之体,有善有恶意之动．
