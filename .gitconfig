@@ -1,0 +1,17 @@
+
+[user]
+	name = x373241884y
+	email = x373241884y@gmail.com
+[color]
+	ui = true
+[alias]
+	ls = log  --color   --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lsg = log  --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lss = log  --color --stat --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+	unstage = reset HEAD --
+	last = log -1 HEAD
+[log]
+	date = iso
+[push]
+	default = simple

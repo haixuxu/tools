@@ -1,0 +1,3 @@
+set lines=54
+set columns=180
+NERDTree ~/github
