@@ -1,0 +1,42 @@
+#!/bin/bash
+while getopts :i:o: opt 
+do
+        case "$opt" in
+        i) #输入的参数的进制
+           #echo "Found the -i option,with vale $OPTARG"
+           ibase=$OPTARG
+           ;;
+        o) #输出参数进制
+           #echo "Found the -o option,with vale $OPTARG"
+           obase=$OPTARG
+           ;;
+        *) #当有不认识的选项的时候arg为?
+           echo "unkonw argument, Usage : "
+           echo "$1 -i 10 -o 16 1 2 3 4 5 6 ..."
+           exit 1
+        esac
+done
+
+#跳过opt参数
+shift $[$OPTIND - 1]
+
+#参数检验
+if [ ! $ibase ]; then
+    echo "Usage : $0 -i 10 -o 16 1 2 3 4 5 6 ..."
+    exit 1
+fi
+
+if [ ! $obase ]; then
+    echo "Usage : $0 -i 10 -o 16 1 2 3 4 5 6 ..."
+    exit 1
+fi
+
+echo "输入进制:$ibase"
+echo "输出进制:$obase"
+
+#执行进制转换
+for i in $@
+do	
+	echo "处理字符串:$i"
+    echo "obase=$obase; ibase=$ibase; $i" |bc
+done
