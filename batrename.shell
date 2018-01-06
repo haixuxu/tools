@@ -1,2 +1,4 @@
 # rename "fdafdaff-2123123.mp3" ==> "fdafdaff.mp3"
 ls|sed -e 'p;s/\-[0-9]\+//' |xargs -n2 echo
+
+ls|grep "少司命"|sed -e 'p;s/^/\.\.\/少司命\//'|xargs -n2 mv

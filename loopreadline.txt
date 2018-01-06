@@ -1,0 +1,8 @@
+# loop print every line
+ls *.txt|sed -e ''
+ls *.txt|perl -ne 'print'
+ls *.txt|perl -pe ''
+perl -nlE '$old=$_; s/image//; qx(mv $old $_)'
+ls *.aac|perl -ne 'chomp;$old=$_;s/aac/mp4/;print "$old $_\n"'|xargs -n2 mv
+
+
