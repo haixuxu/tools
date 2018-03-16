@@ -6,3 +6,4 @@ perl -nlE '$old=$_; s/image//; qx(mv $old $_)'
 ls *.aac|perl -ne 'chomp;$old=$_;s/aac/mp4/;print "$old $_\n"'|xargs -n2 mv
 
 
+rpm -qa|grep 4.13.11|xargs dnf remove
