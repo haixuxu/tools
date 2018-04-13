@@ -86,12 +86,9 @@ var firstLineFromBuffer = function(buffer) {
 exports.validateMessage = validateMessage;
 
 var commitMsgFile = process.argv[2];
-console.log(commitMsgFile);
 var incorrectLogFile = commitMsgFile.replace('COMMIT_EDITMSG', 'logs/incorrect-commit-msgs');
-console.log(incorrectLogFile);
 fs.readFile(commitMsgFile, function(err, buffer) {
     var msg = firstLineFromBuffer(buffer);
-	console.log(msg);
     if (!validateMessage(msg)) {
       fs.appendFile(
         incorrectLogFile, msg + '\n', function() {
