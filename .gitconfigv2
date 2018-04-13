@@ -1,0 +1,14 @@
+[user]
+	email = xuxihai123@gmail.com
+	name = xuxihai
+
+[alias]
+	ls  = log  --color  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lsg = log  --color  --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lss = log  --color  --stat --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit
+	co = checkout
+
+[push]
+	default = simple
+[core]
+	hooksPath = /home/toor/.git_template/hooks
