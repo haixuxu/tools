@@ -6,7 +6,7 @@ alias ev 'vim ~/.vimrc'
 alias es 'vim ~/bin/autosort'
 alias et 'vim ~/.tmux.conf'
 
-alias set_proxy "set -x ALL_PROXY 'socks5://127.0.0.1:1080'"
+alias set_proxy "set -xg ALL_PROXY socks5://127.0.0.1:1080"
 alias unset_proxy="set -e ALL_PROXY"
 alias getip="curl ifconfig.co"
 
