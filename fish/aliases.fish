@@ -6,6 +6,14 @@ alias ev 'vim ~/.vimrc'
 alias es 'vim ~/bin/autosort'
 alias et 'vim ~/.tmux.conf'
 
+alias set_proxy "set -x ALL_PROXY 'socks5://127.0.0.1:1080'"
+alias unset_proxy="set -e ALL_PROXY"
+alias getip="curl ifconfig.co"
+
+alias getjson_ip="curl -s ifconfig.co/json|json_pp"
+alias getjson_ip="curl -s ifconfig.co/json|jq ."
+
+
 alias ssbs 'sslocal -c ~/bwgshadowsocks.json'
 alias cnpm "npm --registry=https://registry.npm.taobao.org "
 alias cyarn "yarn --registry=https://registry.npm.taobao.org "
