@@ -1,9 +1,9 @@
 ## tools 
 
+
+### 包文件查看
 ```bash
 apt-cache policy libc6 #查看当前安装的包版本及可用的包版本
-lsblk  # Check the blockdevices and the file systems that are assigned to those block device
-
 yum install -y yum-utils
 repoquery -l packagename  # 查看包文件列表，不需要安装
 rpm -ql packagename # 查看包文件列表，需要安装
@@ -17,4 +17,9 @@ sudo apt-get install apt-file
 sudo apt-file update
 #then
 apt-file list <package_name>
+```
+### 硬件信息
+```bash
+lsblk  # Check the blockdevices and the file systems that are assigned to those block device
+lshw #list hardware
 ```
