@@ -1,6 +1,0 @@
-#disable ssl in apache
-1)edit /etc/httpd/conf.d/ssl.conf 
-2)remove mod_ssl (ssl open port 443) 
-3)restart httpd( /etc/init.d/httpd restart)
-
-http://115.28.81.19/svn/repos/

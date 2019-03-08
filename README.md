@@ -23,3 +23,19 @@ apt-file list <package_name>
 lsblk  # Check the blockdevices and the file systems that are assigned to those block device
 lshw #list hardware
 ```
+
+### 批量重命名
+```
+# rename "fdafdaff-2123123.mp3" ==> "fdafdaff.mp3"
+ls|sed -e 'p;s/\-[0-9]\+//' |xargs -n2 echo
+
+ls|grep "少司命"|sed -e 'p;s/^/\.\.\/少司命\//'|xargs -n2 mv
+
+find ./ -name '*.module.scss' -print | rename 's/\.module\.scss/.scss/'
+
+find ./ -name "*.js" |sed -e 'p;s/\.js/.tjs/' | xargs -n2 mv
+```
+### 批量删除
+```
+find ./ -name="*.php" -exec rm -v {}\;
+```
