@@ -15,3 +15,23 @@
   917  /etc/init.d/iptables save
   918  cat iptables
   919  service iptables restart
+
+// 常用 iptables设置
+iptables -F
+iptables -X
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -p tcp --dport 15000 -j ACCEPT
+iptables -A INPUT -p tcp --dport 25000 -j ACCEPT
+iptables -L -n
+iptables -P OUTPUT ACCEPT
+iptables -A INPUT -p icmp -j ACCEPT
+iptables -p FORWARD DROP
+iptables -P FORWARD DROP
+iptables -P INPUT DROP
+iptables -L -n
+service iptables save
+cat /etc/sysconfig/iptables
+systemctl status iptables
+
