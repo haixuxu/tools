@@ -1,20 +1,3 @@
- 903  iptables -P INPUT ACCEPT
-  904  iptables -P OUTPUT ACCEPT
-  905  iptables -P FORWARD ACCEPT
-  906  iptables -F
-  907  iptables -X
-  908  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
-  909  iptables -P INPUT DROP
-  910  iptables -P FORWARD DROP
-  911  iptables -A INPUT -i lo -j ACCEPT
-  912  iptables -A INPUT -p icmp -j ACCEPT
-  913  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
-  914  cd /etc/sysconfig/
-  915  cat iptables
-  916  cat iptables.save 
-  917  /etc/init.d/iptables save
-  918  cat iptables
-  919  service iptables restart
 
 // 常用 iptables设置
 iptables -F
@@ -24,10 +7,10 @@ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 iptables -A INPUT -p tcp --dport 15000 -j ACCEPT
 iptables -A INPUT -p tcp --dport 25000 -j ACCEPT
-iptables -L -n
-iptables -P OUTPUT ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 iptables -A INPUT -p icmp -j ACCEPT
 iptables -A INPUT -i lo -j ACCEPT
+iptables -P OUTPUT ACCEPT
 iptables -p FORWARD DROP
 iptables -P FORWARD DROP
 iptables -P INPUT DROP
@@ -47,6 +30,7 @@ systemctl status iptables
 -A INPUT -p tcp -m tcp --dport 443 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 15000 -j ACCEPT
 -A INPUT -p tcp -m tcp --dport 25000 -j ACCEPT
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
 COMMIT
