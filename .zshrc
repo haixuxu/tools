@@ -1,3 +1,4 @@
+source ~/.bashrc
 source ~/.antigen/antigen.zsh
 
 alias set_proxy="export ALL_PROXY=socks5://127.0.0.1:1080"
