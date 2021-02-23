@@ -39,3 +39,7 @@ find ./ -name "*.js" |sed -e 'p;s/\.js/.tjs/' | xargs -n2 mv
 ```
 find ./ -name="*.php" -exec rm -v {}\;
 ```
+### 显示 rpm包列表从大小
+```
+rpm -qa --queryformat '%10{size} - %-25{name} \t %{version} \t %{os} \n' | sort -rh | head -25 | awk '{print $1/1024/1024, $2, $3, $4}'
+```
