@@ -73,7 +73,7 @@ find . -type f -print0 | xargs -0 sed -i 's/foo/bar/g'
 find . -type f -not -path '*/\.*' -print0 | xargs -0 sed -i 's/foo/bar/g'
 find . -type f -name "*.md" -print0 | xargs -0 sed -i 's/foo/bar/g'
 grep -rlZ 'foo' . | xargs -0 sed -i.bak 's/foo/bar/g'
+grep -rl "a/assbc" ./ | xargs sed -i 's#a/assbc#vx.csii.com.cn#g'
 
-
-
+find /path/to/files -type f -exec sed -i 's/oldstring/new string/g' {} \;
 ```
